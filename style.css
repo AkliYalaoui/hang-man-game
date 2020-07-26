@@ -1,0 +1,215 @@
+/*START GLOBAL RULES*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: monospace,sans-serif;
+  color: #333;
+}
+.hangman{
+  margin:20px auto;
+  width: 800px;
+}
+/*START HEADER*/
+.hangman > header{
+  width: 100%;
+  overflow: hidden;
+  padding: 15px;
+  border-bottom: 2px solid #ccc;
+}
+.hangman > header h2,
+.hangman > header div{
+  width: 50%;
+  float: left;
+}
+.hangman > header div{
+  text-align: right;
+}
+/*START MAIN*/
+.hangman main{
+  margin-top: 20px;
+  overflow: hidden;
+  background-color: #DDD;
+}
+.hangman main .hangman-pic{
+  width: 50%;
+  float: left;
+  padding: 10px 40px;
+  position: relative;
+}
+.hangman-pic  .stand{
+  height: 250px;
+  width: 4px;
+  background-color: #000;
+  position: relative;
+  display: none;
+}
+.wrong-1 .stand{
+  display: block !important;
+}
+.hangman-pic  .stand::after{
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 4px;
+  background-color: #000;
+}
+.hangman-pic  .stand::before{
+  position: absolute;
+  content: '';
+  top: 15px;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background-color: #000;
+}
+.hangman-pic .round{
+  position: absolute;
+  top: 57px;
+  left: 75px;
+  height: 65px;
+  width: 65px;
+  border: 2px dashed #000;
+  border-radius: 50%;
+  display: none;
+}
+.wrong-2 .round{
+  display: block !important;
+}
+.hangman-pic .round::after{
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 29px;
+  height: 30px;
+  width: 4px;
+  background-color: #000;
+}
+.hangman .man .head{
+  position: absolute;
+  top: 64px;
+  left: 82px;
+  height: 50px;
+  width: 50px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: none;
+}
+.wrong-3 .head{
+  display: block !important;
+}
+.hangman .man .body{
+  position: absolute;
+  content: '';
+  top: 114px;
+  left: 107px;
+  height:  100px;
+  width: 4px;
+  background-color: #000;
+  display: none;
+}
+.wrong-4 .body{
+  display: block !important;
+}
+.hangman .man .body::after{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: -18px;
+  transform: rotate(-45deg);
+  height:  50px;
+  width: 4px;
+  background-color: #000;
+}
+.hangman .man .body::before{
+  position: absolute;
+  content: '';
+  top: 0;
+  right: -18px;
+  transform: rotate(45deg);
+  height:  50px;
+  width: 4px;
+  background-color: #000;
+}
+.hangman .man .feet{
+  position: absolute;
+  top: 206px;
+  left: 109px;
+  display: none;
+}
+.wrong-5 .feet{
+  display: block !important;
+}
+.hangman .man .feet::after{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: -18px;
+  transform: rotate(45deg);
+  height:  50px;
+  width: 4px;
+  background-color: #000;
+}
+.hangman .man .feet::before{
+  position: absolute;
+  content: '';
+  top: 0;
+  right: -18px;
+  transform: rotate(-45deg);
+  height:  50px;
+  width: 4px;
+  background-color: #000;
+}
+.hangman main .letters {
+  padding: 20px;
+  width: 50%;
+  text-align: center;
+  float: left;
+}
+.hangman main .letters.game-over{
+  pointer-events: none !important;
+}
+.hangman main .letters span{
+  padding: 15px;
+  background-color: #1F8EDF;
+  margin: 4px;
+  color: #fff;
+  font-weight: bold;
+  display: inline-block;
+  border-radius: 3px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.hangman main .letters span.clicked{
+  background-color:#333;
+  opacity: .3;
+  pointer-events: none;
+}
+/*START FOOTER*/
+.hangman footer{
+  margin-top: 25px;
+  text-align: center;
+  min-width: 100px;
+  padding: 10px;
+  background-color: #1F8EDF;
+}
+.hangman footer span{
+  height: 40px;
+  width: 40px;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: -15px;
+  color: #fff;
+  border-bottom: 2px solid #FFF;
+
+}
+.hangman footer span.has-space{
+  background:none;
+  border: none;
+}
